@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
     res.send('Hello API')
 })
 
+app.post('/product', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+})
+
 app.listen(3000, () => {
     console.log('API is running on port 3000');
 })
