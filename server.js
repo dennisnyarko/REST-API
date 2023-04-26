@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
+const Product = require('./models/productModel');
 
 
 app.use(express.json())
@@ -22,9 +23,16 @@ app.get('/', (req, res) => {
     res.send('Hello API')
 })
 
-app.post('/product', (req, res) => {
-    console.log(req.body);
-    res.send(req.body);
+app.post('/product', async(req, res) => {
+    try {
+        const product = await Product.create(req.body)
+        res.status(200).json(product);
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({message: error.message})
+        
+    }
 })
 
 app.listen(3000, () => {
