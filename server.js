@@ -48,6 +48,8 @@ app.get('/products/:id', async (req, res) => {
     }
 })
 
+
+// add product details
 app.post('/product', async (req, res) => {
     try {
         const product = await Product.create(req.body);
