@@ -97,7 +97,7 @@ app.delete('/products/:id', async(req, res) => {
     }
 }) 
 
-
+// port number
 app.listen(3000, () => {
     console.log('API is running on port 3000');
 })
