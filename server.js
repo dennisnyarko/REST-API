@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
     res.send('Hello API')
 })
 
+// read all products
 app.get('/products', async (req, res) => {
     try {
         const products = await Product.find({});
