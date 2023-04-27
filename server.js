@@ -36,6 +36,7 @@ app.get('/products', async (req, res) => {
     }
 })
 
+// read products for specific ID
 app.get('/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
